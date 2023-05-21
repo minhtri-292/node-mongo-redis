@@ -7,6 +7,7 @@ pipeline {
                 sh 'docker build -t ntminh/node-mongo-redis:v1 .'
                 sh 'docker images'
             }
+        }
         stage('push image') {
             steps {
                 // This step should not normally be used in your script. Consult the inline help for details.
