@@ -16,5 +16,10 @@ pipeline {
                 }
             }
         }
+        stage('ssh server'){
+            sshagent(credentials:['ssh-server']) {
+                sh 'ssh -o StrictHostKeyChecking=no -l ubuntu 44.211.146.100 uname -a'
+            }
+        }
     }
 }
